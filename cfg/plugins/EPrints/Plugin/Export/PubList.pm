@@ -172,5 +172,5 @@ sub output_list
         print {$opts{fh}} $xmldoc_string;
         return;
 }
-
+ 
 1;
