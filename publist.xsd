@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+  targetNamespace="http://yourdomain/publist2" xmlns:publist2="http://yourdomain/publist2">
+  <xs:element name="publist">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="publist2:error"/>
+        <xs:element ref="publist2:eprints"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="error">
+    <xs:complexType>
+      <xs:attribute name="code" use="required" type="xs:integer"/>
+      <xs:attribute name="text" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="eprints">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="publist2:eprint"/>
+      </xs:sequence>
+      <xs:attribute name="count" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="eprint">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="publist2:pubdate"/>
+        <xs:element ref="publist2:citation"/>
+        <xs:element ref="publist2:firstauthor"/>
+        <xs:element ref="publist2:type"/>
+        <xs:element ref="publist2:coins"/>
+      </xs:sequence>
+      <xs:attribute name="id" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="pubdate" type="xs:integer"/>
+  <xs:element name="citation">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="publist2:title"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="title" type="xs:string"/>
+  <xs:element name="firstauthor" type="xs:string"/>
+  <xs:element name="type" type="xs:NCName"/>
+  <xs:element name="coins" type="xs:string"/>
+</xs:schema>
