@@ -130,3 +130,8 @@ Root element is <publist>. It includes one <error> and one <eprints> element.
 To get a XML straem with all publications from 2008 to 2012 of a person named "Bisaz" (author, creator, ...) use
 http://server/cgi/publist?name=Bisaz&op=AND&PY=2008-2012
 
+## Install
+    
+- put publist into your cgi directory
+- put PubList.pm into yout export plugin directory
+- put publist.xsd into out html-tree (every language if more than one)
