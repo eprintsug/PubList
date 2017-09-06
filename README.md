@@ -133,5 +133,5 @@ http://server/cgi/publist?name=Bisaz&op=AND&PY=2008-2012
 ## Install
     
 - put publist into your cgi directory
-- put PubList.pm into yout export plugin directory
-- put publist.xsd into out html-tree (every language if more than one)
+- put PubList.pm into your export plugin directory
+- put publist.xsd into your html-tree (every language if more than one)
