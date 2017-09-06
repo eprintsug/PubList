@@ -22,9 +22,7 @@ The maximum output is 2000 items (configure) and sorted by publication date. At 
        collection - e.g. collection=11068
                Number of a community or collection within ZORA.
 
-       Call publist by one or more of these parameters, 
-       or call it by useful combinations (name+collection|orcid+collection) 
-       - e.g. collection=11068&collection=12099 or name=Bisaz&Collection=11068
+Call publist by one or more of these parameters, or call it by useful combinations (name+collection|orcid+collection) - e.g. collection=11068&collection=12099 or name=Bisaz&Collection=11068
 
 ## PARAMETERS to build a second list (optional) used to combine with the first one.
 
@@ -62,7 +60,7 @@ The maximum output is 2000 items (configure) and sorted by publication date. At 
        XML
 
 ## RETRUN VALUE
-       CGI publist returns a more or lesse complex XML datastream:
+       CGI publist returns an easy to read and handle XML datastream:
 
        <?xml version="1.0" encoding="UTF-8"?>
         <publist xmlns="">
@@ -82,8 +80,7 @@ The maximum output is 2000 items (configure) and sorted by publication date. At 
           </eprints>
         </publist>
 
-       Root element is <publist>
-           includes one <error> and one <eprints> element.
+Root element is <publist>. It includes one <error> and one <eprints> element.
 
        <error> informs about the result: errorcode / errortext (like http://www.restapitutorial.com/httpstatuscodes.html)
            200 Ok
@@ -127,6 +124,6 @@ The maximum output is 2000 items (configure) and sorted by publication date. At 
 
 ## Example
     
-    To get a XML straem with all publications from 2008 to 2012 of a person named "Bisaz" (author, creator, ...) use
-    http://server/cgi/publist?name=Bisaz&op=AND&PY=2008-2012
+To get a XML straem with all publications from 2008 to 2012 of a person named "Bisaz" (author, creator, ...) use
+http://server/cgi/publist?name=Bisaz&op=AND&PY=2008-2012
 
