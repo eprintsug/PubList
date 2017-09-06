@@ -82,7 +82,9 @@ Call publist by one or more of these parameters, or call it by useful combinatio
 
 Root element is <publist>. It includes one <error> and one <eprints> element.
 
-       <error> informs about the result: errorcode / errortext (like http://www.restapitutorial.com/httpstatuscodes.html)
+       <error> informs about the result: errorcode / errortext 
+       (like http://www.restapitutorial.com/httpstatuscodes.html)
+       
            200 Ok
 
            204 No results
@@ -97,7 +99,8 @@ Root element is <publist>. It includes one <error> and one <eprints> element.
            could have 1-n <eprint> elements (one per publication), if there are some.
 
        <eprint>
-           includes data elements - useful to be printed in publicationlists (Citation, eprintid to build up links to ZORA, etc.)
+           includes data elements - useful to be printed in publicationlists (Citation, eprintid 
+           to build up links to your repo, etc.)
 
            includes metadata elements - useful for sorting (pubdate, PubType, etc.)
 
