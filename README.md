@@ -14,10 +14,10 @@ The maximum output is 2000 items (configurable) and sorted by publication date. 
 
 ## PARAMETERS to build a list (mandatory, at least one of the following parameters must be used)
        name - e.g. name=Braendle, M
-               Name of an Author or Editor or
+               Name of an author or editor
 
        orcid - e.g. orcid=0000-0002-7752-6567
-               Orcid of an Author or Editor<or>
+               Orcid of an author or editor
 
        collection - e.g. collection=11068
                Number of a community or collection within ZORA.
@@ -45,6 +45,10 @@ Call publist by one or more of these parameters, or call it by useful combinatio
        PY      Publication Year - e.g. PY=2008-2012
 
        CS      Chair Subject - e.g. CS=sSinologie0
+
+These parameters depend on the data model used in your repository. The ones listed here are
+used by ZORA.
+
 
 ## PARAMETER op to combine the two lists (optional)
        AND     Create a list containing only the items which are in both lists
@@ -80,7 +84,7 @@ Call publist by one or more of these parameters, or call it by useful combinatio
           </eprints>
         </publist>
 
-Root element is <publist>. It includes one <error> and one <eprints> element.
+Root element is &lt;publist>. It includes one &lt;error> and one &lt;eprints> element.
 
        <error> informs about the result: errorcode / errortext 
        (like http://www.restapitutorial.com/httpstatuscodes.html)
