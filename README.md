@@ -1,18 +1,18 @@
 # PubList
-Interface to build list of publications for personal / organisational websites.
+Interface to build a list of publications for personal / organisational websites.
 
-publist generates a query against your local repository and returns a reduced XML-stream (the "kiss" way), needed for building publication lists on the web. It can be used by any WCMS or App (we did it with magniloa and typo3).
+PubList generates a query against your local repository and returns a reduced XML stream (the "kiss" way), needed for building publication lists on the web. It can be used by any WCMS or App (we did it with Magnolia and Typo3).
 
 ## DESCRIPTION
 
 - cgi script to search and merge different lists
 - export plugin for XML output
 
-A lot of parameters are used to build a simple list, or (optional) build a second list and combine the two ones with AND, OR or NOT operation.
+A lot of parameters are used to build a simple list, or (optionally) build a second list and combine the two lists with AND, OR or NOT operation.
 
-The maximum output is 2000 items (configure) and sorted by publication date. At least this script could offer a different output formats; by default it's own XML export.
+The maximum output is 2000 items (configurable) and sorted by publication date. This script can provide different output formats as well; by default if offers its own XML export.
 
-## PARAMETERS to build a list (obligatory)
+## PARAMETERS to build a list (mandatory, at least one of the following parameters must be used)
        name - e.g. name=Braendle, M
                Name of an Author or Editor or
 
@@ -22,7 +22,7 @@ The maximum output is 2000 items (configure) and sorted by publication date. At 
        collection - e.g. collection=11068
                Number of a community or collection within ZORA.
 
-Call publist by one or more of these parameters, or call it by useful combinations (name+collection|orcid+collection) - e.g. collection=11068&collection=12099 or name=Bisaz&Collection=11068
+Call publist by one or more of these parameters, or call it by useful combinations (name+collection|orcid+collection) - e.g. collection=11068&collection=12099 or name=Bisaz&collection=11068
 
 ## PARAMETERS to build a second list (optional) used to combine with the first one.
 
@@ -49,9 +49,9 @@ Call publist by one or more of these parameters, or call it by useful combinatio
 ## PARAMETER op to combine the two lists (optional)
        AND     Create a list containing only the items which are in both lists
 
-       OR      Create a list from List1 with elements from List2 added.
+       OR      Create a list from list 1 with elements from list 2 added.
 
-       NOT     Create a list from List1 with elements from List2 removed.
+       NOT     Create a list from list 1 with elements from list 2 removed.
 
 ## PARAMETER export to use other output formats (optional) - change them to your needs
        EndNote
@@ -59,11 +59,11 @@ Call publist by one or more of these parameters, or call it by useful combinatio
        CSV
        XML
 
-## RETRUN VALUE
-       CGI publist returns an easy to read and handle XML datastream:
+## RETURN VALUE
+       CGI publist returns an easy to read and handle XML data stream:
 
        <?xml version="1.0" encoding="UTF-8"?>
-        <publist xmlns="">
+       <publist xmlns="">
           <error code="{errorcode}" text="{errortext}" />
           <eprints count="{counter}">
                 <eprint id="{eprintid}">
@@ -108,13 +108,13 @@ Root element is <publist>. It includes one <error> and one <eprints> element.
            Number of results / elements in list.
 
        eprintid
-           Identifier, usefull to build up a link to ZORA (http://www.zora.uzh.ch/eprintid)
+           Identifier, useful to build up a link to your repository (http://www.yourrepo.com/eprintid)
 
        <pubdate>YYYYMMDD</pubdate>
-           Useful to sort: Year, month, day
+           Useful for sorting: Year, month, day
 
        <citation>Citation</citation>
-           Citation incl. tagged titel (<title>, </title>), usefull as link-text.
+           Citation incl. tagged title (<title>, </title>), useful as link text.
 
        <firstauthor>FirstAuthor</firstauthor>
            First author, if there are more than one.
@@ -123,16 +123,16 @@ Root element is <publist>. It includes one <error> and one <eprints> element.
            Type of publication.
 
        <coins>COinS</coins>
-           ContextObjects in Spans, used by search engines.
+           ContextObjects in Span, used by search engines.
 
 ## Example
     
-To get a XML straem with all publications from 2008 to 2012 of a person named "Bisaz" (author, creator, ...) use
+To get an XML stream with all publications from 2008 to 2012 of a person named "Bisaz" (author, creator, ...) use
 http://server/cgi/publist?name=Bisaz&op=AND&PY=2008-2012
 
 ## Install
     
-- put publist into your cgi directory
+- put publist into your {eprints_root}/cgi directory
 - put PubList.pm into your export plugin directory
-- put publist.xsd into your html-tree (every language if more than one)
-- change all "yourdomain" strings in scripts and configs to your belongs
+- put publist.xsd into your {eprints_root}/archives/{archive}/html/{language}/ tree (for each language)
+- change all "yourdomain" strings in scripts and configs to your belongings
