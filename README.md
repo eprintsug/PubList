@@ -134,7 +134,7 @@ Root element is &lt;publist>. It includes one &lt;error> and one &lt;eprints> el
 To get an XML stream with all publications from 2008 to 2012 of a person named "Bisaz" (author, creator, ...) use
 http://server/cgi/publist?name=Bisaz&op=AND&PY=2008-2012
 
-## Install
+## Installation
     
 - put publist into your {eprints_root}/cgi directory
 - put PubList.pm into your export plugin directory
