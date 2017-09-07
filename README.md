@@ -135,3 +135,4 @@ http://server/cgi/publist?name=Bisaz&op=AND&PY=2008-2012
 - put publist into your cgi directory
 - put PubList.pm into your export plugin directory
 - put publist.xsd into your html-tree (every language if more than one)
+- change all "yourdomain" strings in scripts and configs to your belongs
